@@ -25,7 +25,7 @@
 
 
     <meta charset="UTF-8">
-    <title>Get out of your bubble!</title>
+    <title>What do others read? </title>
 
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -78,14 +78,13 @@
              <div class="row" id="selectors">
             <div  class="col-md-2"></div>
                  <div class="col-md-8">
-                 <form class="form-inline" method="post" >
-                       <label class="sr-only" for="inlineFormInputName2">Name</label>
-                      <input type="text" name="query" class="form-control mb-1 mr-lg-6 col-md-4" id="inlineFormInputName2" placeholder="What are you interested in? (e.g. impeachment)">
+                 <form class="form-inline justify-content-center" method="post">
+                       <label class="sr-only" for="inlineforminput">Name</label>
+                      <input type="text" name="query" class="form-control-lg" id="inlineforminput" placeholder="What are you interested in? (e.g. impeachment)">
                    <input id="datepicker-large" name="date" width="276" />
-                                            <button id="submit-button" type="submit" class="btn btn-primary mb-2 col-md-2">Find News!</button>
-
+                     <div id="form-placeholder" class="col-md-1"></div>
+                                            <button id="submit-button" type="submit" class="btn btn-primary btn-lg col-md-2 justify-content-center">Find News!</button>
                                       </form>
-
                 </div>
             <div  class="col-md-2"></div>
 
@@ -348,7 +347,7 @@
     $(document).ready(function() {
         $('.main-carousel').flickity({
             // options
-            cellAlign: 'left',
+            cellAlign: 'center',
             contain: true,
             pageDots: true,
             wrapAround: true,
@@ -361,12 +360,14 @@
         today = mm + '/' + dd + '/' + yyyy;
 
 
-today = mm + '/' + dd + '/' + yyyy;
+        today = mm + '/' + dd + '/' + yyyy;
+
 
             $('#datepicker-large').datepicker({
             uiLibrary: 'bootstrap4',
                 value: date,
-                size: "large"
+                size: "large",
+                        maxDate: today
 
         });
 

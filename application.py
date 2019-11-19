@@ -2,16 +2,23 @@ import flask
 from flask import Flask
 from newsapi import NewsApiClient
 from flask import request, redirect
+import datetime
 
 app = Flask(__name__)
 app.debug = True
 # app.run(debug=True)
 
+
+#gt today's date:
+d_today = datetime.datetime.today()
+d_today =d_today.strftime('%Y-%m-%d')
+
+
 # Init
 newsapi = NewsApiClient(api_key='ab38b7cbd99144fda017ca64ba98df3b')
-query_input = "Democratic primary"
-from_input = "2019-11-06"
-to_input = "2019-11-06"
+query_input = "impeachment"
+from_input = d_today
+to_input = d_today
 page_size_input = 100
 page_input = 1
 date = to_input[5:7] + "/" + to_input[8:10] + "/" + to_input[0:4]
