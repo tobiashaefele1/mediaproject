@@ -4,9 +4,7 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-h1 {
-	margin-top: 50px;
-}
+
 
 .row-names{
 	text-align: right;
@@ -40,6 +38,7 @@ h1 {
 #website-title{
 	text-align: center;
 	padding-bottom: 50px;
+	padding-top: 50px;
 }
 
 /*#submit-button{*/
@@ -113,7 +112,26 @@ i.gj-icon{
 }
 
 	#submit-button{
-		margin-top: 30px;
+		margin-top: 0px;
 		margin-left: 0px;
 	}
+
+.headline{
+	min-height: 100px;
+	text-align: center;
+	font-size: 20px;
+/*	display: flex;*/
+/*flex: 1*/
+/*	padding-bottom: 100%;*/
+/*    margin-bottom: -100%;*/
+}
+#datepicker-large, #inlineforminput,#submit-button{
+	font-size: 18px;
+	/*margin-left: 50px;*/
+}
+#website-title{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 }
