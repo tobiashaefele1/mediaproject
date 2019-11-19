@@ -98,6 +98,19 @@ i.gj-icon{
 
 }
 
+#language-selector{
+	text-align: right
+}
+
+
+
+
+
+
+
+
+
+
 @media(max-width: 900px){
 
 .carousel-cell{
