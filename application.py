@@ -160,6 +160,17 @@ def re_load():
 
 
 
+@app.route('/germany')
+def germany():
+    return flask.render_template('germany.html')
+
+
+@app.route('/UK')
+def UK():
+    return flask.render_template('UK.html')
+
+
+
 
 
 if __name__ == '__main__':
