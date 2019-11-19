@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get out of your bubble!</title>
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+{##}
+        <link rel="stylesheet" href="../static/styles/style.css">
+            <link rel="stylesheet" href="../static/styles/flickity.min.css" media="screen">
+    <link rel="shortcut icon" href="../static/favicon.ico">
+
+
+
+{#    the "slick" slider#}
+{#      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">#}
+{#        <!-- Add the slick-theme.css if you want default styling -->#}
+{#        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">#}
+{#    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>#}
+{#      <link rel="stylesheet" type="text/css" href="../static/slick/slick.min.css">#}
+{#  <link rel="stylesheet" type="text/css" href="../static/slick/slick.css">#}
+
+{#  <link rel="stylesheet" type="text/css" href="../static/slick/slick-theme.css">#}
+{#    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>#}
+
+     <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+
+
+             <script type="text/javascript">
+            var content = {{content|tojson}}
+             var date = {{date|tojson}}
+
+            </script>
+
+
+            {#    the  date picker!! #}
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div  class="col-md-2"></div>
+            <div class="col-md-8">
+            <h1 id="website-title">What do others read?</h1>
+                </div>
+            <div  class="col-md-2"></div>
+
+        </div>
+
+             <div class="row" id="selectors">
+            <div  class="col-md-2"></div>
+                 <div class="col-md-8">
+                 <form class="form-inline" method="post" >
+                       <label class="sr-only" for="inlineFormInputName2">Name</label>
+                      <input type="text" name="query" class="form-control mb-1 mr-lg-6 col-md-4" id="inlineFormInputName2" placeholder="What are you interested in? (e.g. impeachment)">
+                   <input id="datepicker-large" name="date" width="276" />
+                                            <button id="submit-button" type="submit" class="btn btn-primary mb-2 col-md-2">Find News!</button>
+
+                                      </form>
+
+                </div>
+            <div  class="col-md-2"></div>
+
+        </div>
+
+
+
+{#        <div class="row">#}
+{#            <div class="col-md-2">  </div>#}
+{##}
+{##}
+{#            <div class="col-md-1" id ="MSNBC"> MSNBC </div>#}
+{#            <div class="col-md-1"id="CNN"> CNN </div>#}
+{#            <div class="col-md-1"id ="Politico"> Politico </div>#}
+{#            <div class="col-md-2"id="NYT">#}
+{#                <div>#}
+{#                <h1> New York Times </h1>#}
+{#                </div>#}
+{#                #}
+{#            </div>#}
+{#            <div class="col-md-1"id="Fox"> Fox </div>#}
+{##}
+{#            <div class="col-md-1" id ="Breitbart"> Breitbart </div>#}
+{##}
+{#            <div class="col-md-1" id="Infowars"> Infowars </div>#}
+{##}
+{##}
+{#            <div class="col-md-2">  </div>#}
+{##}
+{##}
+{#        </div>#}
+
+        <div class="row">
+
+
+
+<div class="col-md-2"></div>
+
+<div class="col-md-8">
+
+
+                        <div class="main-carousel" id="carousel">
+                             <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet0"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline0" class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link0">
+                                    <img id="photo0" src="" class="img-fluid"> </img> </a>
+                                </div>
+                                <div>
+                                    <p id="content0"> </p>
+                                </div>
+                             </div>
+
+                            <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet1"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline1"class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link1">
+                                        <img id="photo1" src="" class="img-fluid"> </img></a>
+                                </div>
+                                <div>
+                                    <p id="content1"> </p>
+                                </div>
+                             </div>
+
+                            <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet2"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline2"class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link2">
+                                        <img id="photo2" src="" class="img-fluid"> </img></a>
+                                </div>
+                                <div>
+                                    <p id="content2"> </p>
+                                </div>
+                             </div>
+
+                            <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet3"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline3"class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link3">
+                                        <img id="photo3" src="" class="img-fluid"> </img></a>
+                                </div>
+                                <div>
+                                    <p id="content3"> </p>
+                                </div>
+                             </div>
+
+                            <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet4"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline4"class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link4">
+                                        <img id="photo4" src="" class="img-fluid"> </img></a>
+                                </div>
+                                <div>
+                                    <p id="content4"> </p>
+                                </div>
+                             </div>
+
+                            <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet5"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline5"class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link5">
+                                        <img id="photo5" src="" class="img-fluid"> </img></a>
+                                </div>
+                                <div>
+                                    <p id="content5"> </p>
+                                </div>
+                             </div>
+
+                            <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet6"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline6"class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link6">
+                                        <img id="photo6" src="" class="img-fluid"> </img></a>
+                                </div>
+                                <div>
+                                    <p id="content6"> </p>
+                                </div>
+                             </div>
+
+                            <div class="carousel-cell">
+                                 <div>
+                                     <p id="outlet7"> </p>
+                                 </div>
+                                 <div>
+                                        <h3 id="headline7"class="headline"> </h3>
+                                </div>
+                                <div>
+                                    <a id="photo-link7">
+                                        <img id="photo7" src="" class="img-fluid"> </img> </a>
+                                </div>
+                                <div>
+                                    <p id="content7"> </p>
+                                </div>
+                             </div>
+
+
+
+
+                    </div>
+
+</div>
+            <div class="col-md-2"></div>
+
+
+        </div>
+
+{#                <div class="row">#}
+{##}
+{##}
+{##}
+{#<div class="col-md-2"></div>#}
+{##}
+{#<div class="col-md-8">#}
+{##}
+{##}
+{#                        <div class="second-carousel">#}
+{#                                                    <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{##}
+{#                          <div class="carousel-cell">#}
+{#                              <p>hello</p>#}
+{#                                   <div>#}
+{#                                        <h3 id="NYT-headline"> </h3>#}
+{#                                    </div>#}
+{#                                    <div>#}
+{#                                        <img id="NYT-photo" src="" class="img-fluid"> </img>#}
+{#                                    </div>#}
+{##}
+{#                                    <div>#}
+{#                                        <p id="NYT-text"> </p>#}
+{#                                    </div>#}
+{#                          </div>#}
+{#                        <div class="carousel-cell" ><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{#                                                 <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{#                        <div class="carousel-cell"><p>hello</p></div>#}
+{##}
+{#                    </div>#}
+{##}
+{#    </div>#}
+{#            <div class="col-md-2"></div>#}
+{##}
+{##}
+{#        </div>#}
+
+    </div>
+
+
+
+	<!-- Load JS libraries -->
+{#        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>#}
+{#<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>#}
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/js/popper.min.js"></script>
+    	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/queue.min.js"></script>
+	<script src="../static/js/d3.min.js"></script>
+
+{#    datepicker#}
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+
+
+
+
+
+{#    <script type="text/javascript" src="../static/js/slick.min.js"></script>#}
+{#          <script type="text/javascript" src="../static/slick/slick.min.js"></script>#}
+
+
+
+
+{#    #}
+{#    load my own javascript files#}
+	<script src="../static/js/main.js"></script>
+	<script src="../static/js/flickity.pkgd.min.js"></script>
+
+
+    <script>
+    $(document).ready(function() {
+        $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true,
+            pageDots: true,
+            wrapAround: true,
+            initialIndex: 4
+        });
+        var today = new Date()
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = mm + '/' + dd + '/' + yyyy;
+
+
+today = mm + '/' + dd + '/' + yyyy;
+
+            $('#datepicker-large').datepicker({
+            uiLibrary: 'bootstrap4',
+                value: date,
+                size: "large"
+
+        });
+
+        {# $('.second-carousel').flickity({#}
+        {#    // options#}
+        {#    cellAlign: 'left',#}
+        {#    contain: true});#}
+
+    {#    $('.datepicker').datepicker({#}
+    {#format: 'mm/dd/yyyy',#}
+    {#startDate: '-3d'#}
+    {#        });#}
+
+
+    })
+
+
+
+              </script>
+
+
+
+
+</body>
+</html>

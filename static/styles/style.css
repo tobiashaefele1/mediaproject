@@ -1,0 +1,66 @@
+/* custom css rules */
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+}
+
+.row-names{
+	text-align: right;
+}
+
+.carousel-cell{
+	height: 700px;
+	width: 20%;
+	padding-left: 15px;
+	padding-right: 15px;
+	/*height: 450px;*/
+	/*fill: grey;*/
+	/*background-color: grey;*/
+	/*display: flex;*/
+}
+
+.headline{
+	min-height: 150px;
+	text-align: center;
+/*	display: flex;*/
+/*flex: 1*/
+/*	padding-bottom: 100%;*/
+/*    margin-bottom: -100%;*/
+}
+
+.outlet{
+	text-align: center;
+}
+#website-title{
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+#submit-button{
+	margin-left: 30px;
+}
+#selectors{
+	padding-bottom: 50px;
+}
+
+#datepicker{
+	/*min-height: 40px;*/
+	/*margin-bottom: 40px;*/
+	/*margin-top: 40px;*/
+}
+button.btn.btn-outline-secondary.border-left-0{
+	/*height: 100%*/
+}
+/*
+.triangle-path{
+	stroke: #646464;
+	color: grey;
+	stroke-width: 1px;
+	!*
+	stroke-dasharray: 2,2;
+	*!
+	stroke-linejoin: round;
+}*/
