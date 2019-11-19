@@ -139,7 +139,7 @@ def retrieve_everything(query_input,from_input, to_input):
 @app.route('/')
 def index():
     # print(content)
-    return flask.render_template('index.html', content=retrieve_everything(query_input, from_input, to_input), date = date)
+    return flask.render_template('index.html', content=retrieve_everything(query_input, from_input, to_input), date = date, scrollToAnchor=0)
 # NYT=NYT, Huffington_Post=Huffington_Post, Politico=Politico, Reuters=Reuters, USA_today=USA_today,CNN=CNN,FOX=FOX)
 
 
@@ -156,7 +156,7 @@ def re_load():
     to_input = date_reformat
 
     query_input = form
-    return flask.render_template('index.html', content=retrieve_everything(query_input, from_input, to_input), date=date)
+    return flask.render_template('index.html', content=retrieve_everything(query_input, from_input, to_input), date=date, scrollToAnchor='carousel')
 
 
 

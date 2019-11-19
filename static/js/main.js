@@ -34,6 +34,13 @@ content.forEach(function(d,i){
     }
 })
 
+if(scrollToAnchor != 0) {
+       document.addEventListener("DOMContentLoaded", function () {
+            document.location.hash = '#' + scrollToAnchor;
+                })
+    }
+
+
  //
 
 
