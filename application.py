@@ -1,5 +1,5 @@
 import flask
-from flask import Flask
+from flask import Flask, jsonify
 from newsapi import NewsApiClient
 from flask import request, redirect
 import datetime
@@ -157,6 +157,21 @@ def re_load():
 
     query_input = form
     return flask.render_template('index.html', content=retrieve_everything(query_input, from_input, to_input), date=date, scrollToAnchor='carousel')
+
+@app.route('/form_data', methods = ['POST'])
+def form_data():
+    form = request.form["query"]
+    date = request.form["date"]
+    print(form)
+    print(date)
+    date_reformat = date[-4:] + "-" + date[0:2] + "-" + date[3:5]
+    print(date_reformat)
+    from_input = date_reformat
+    to_input = date_reformat
+    query_input = form
+    content = retrieve_everything(query_input, from_input, to_input)
+    scrollToAnchor = 'carousel'
+    return jsonify({'content': content, 'date': date, 'scrollToAnchor': scrollToAnchor})
 
 
 

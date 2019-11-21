@@ -8,37 +8,66 @@
 // console.log(NYT)
 
 console.log(content);
-var outlets = ["MSNBC", "Huffington Post", "CNN", "Politico", "NYT", "Reuters", "USA Today", "FOX"];
 
-content.forEach(function(d,i){
+function updateContent() {
+    var outlets = ["MSNBC", "Huffington Post", "CNN", "Politico", "NYT", "Reuters", "USA Today", "FOX"];
 
-        document.getElementById("outlet"+i).innerHTML = (outlets[i]);
-        document.getElementById("outlet"+i).className = "outlet"
+    content.forEach(function (d, i) {
 
-    if(content[i].totalResults != 0) {
+        document.getElementById("outlet" + i).innerHTML = (outlets[i]);
+        document.getElementById("outlet" + i).className = "outlet"
 
-        document.getElementById("headline"+i).innerHTML = (content[i].articles[0].title)
-        document.getElementById("photo"+i).src = (content[i].articles[0].urlToImage)
-        document.getElementById("content"+i).innerHTML = (content[i].articles[0].content)
-        document.getElementById("photo-link"+i).href = (content[i].articles[0].url)
+        if (content[i].totalResults != 0) {
 
-    }
-    else{
-        var no_content_text = "no content available";
-        document.getElementById("content"+i).innerHTML = (no_content_text)
-        document.getElementById("content"+i).style.textAlign = "center"
-                document.getElementById("content"+i).style.color = "grey"
-                        document.getElementById("content"+i).style.fontStyle = "italic"
+            document.getElementById("headline" + i).innerHTML = (content[i].articles[0].title)
+            document.getElementById("photo" + i).src = (content[i].articles[0].urlToImage)
+            document.getElementById("content" + i).innerHTML = (content[i].articles[0].description)
+            document.getElementById("photo-link" + i).href = (content[i].articles[0].url)
+
+        } else {
+            var no_content_text = "no content available";
+            document.getElementById("content" + i).innerHTML = (no_content_text)
+            document.getElementById("content" + i).style.textAlign = "center"
+            document.getElementById("content" + i).style.color = "grey"
+            document.getElementById("content" + i).style.fontStyle = "italic"
 
 
-    }
-})
+        }
+    })
 
-if(scrollToAnchor != 0) {
-       document.addEventListener("DOMContentLoaded", function () {
+
+    if (scrollToAnchor != 0) {
+        document.addEventListener("DOMContentLoaded", function () {
             document.location.hash = '#' + scrollToAnchor;
-                })
+        })
     }
+
+}
+
+updateContent()
+
+$(document).ready(function() {
+    $('#my-form').on('submit', function(event) {
+            event.preventDefault();
+        $.ajax({
+            data: {
+                query: $('#inlineforminput').val(),
+                date: $('#datepicker-large').val()
+            },
+            type: 'POST',
+            url: '/form_data'
+        })
+            .done(function(data){
+                console.log(data)
+                content = data.content
+                date = data.date
+                scrollToAnchor = data.scrollToAnchor
+                updateContent()
+
+            })
+    });
+});
+
 
 
  //
