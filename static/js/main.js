@@ -38,15 +38,20 @@ function updateContent() {
 
     if (scrollToAnchor != 0) {
         document.addEventListener("DOMContentLoaded", function () {
-            document.location.hash = '#' + scrollToAnchor;
+            // document.location.hash = '#' + scrollToAnchor;
+             $('html, body').animate({
+        scrollTop: $("#{scrollToAnchor}").offset().top
+    }, 2000);
+
         })
     }
 
 }
 
-updateContent()
 
 $(document).ready(function() {
+    updateContent()
+
     $('#my-form').on('submit', function(event) {
             event.preventDefault();
         $.ajax({
