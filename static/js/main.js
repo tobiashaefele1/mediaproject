@@ -41,6 +41,9 @@ function updateContent() {
         } else {
             var no_content_text = "no content available";
             document.getElementById("content" + i).innerHTML = (no_content_text)
+               document.getElementById("headline" + i).innerHTML = "";
+            document.getElementById("photo" + i).style.visibility = "hidden";
+
             document.getElementById("content" + i).style.textAlign = "center"
             document.getElementById("content" + i).style.color = "grey";
             document.getElementById("content" + i).style.borderBottom = "none";
@@ -61,7 +64,7 @@ function updateContent() {
 
             // document.location.hash = '#' + scrollToAnchor;
              $('html, body').animate({
-        scrollTop: $("#{scrollToAnchor}").offset().top
+        scrollTop: $(`#${scrollToAnchor}`).offset().top
             }, 2000);
         }
 
