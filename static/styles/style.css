@@ -102,10 +102,11 @@ i.gj-icon{
 }
 #footer-text{
     text-align: right;
+    font-style: italic;
 }
 
 #footer{
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 html{

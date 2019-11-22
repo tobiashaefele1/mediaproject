@@ -37,6 +37,7 @@ function updateContent() {
                             else{document.getElementById("3_list" + i).style.visibility = "hidden";}
 
 
+
         } else {
             var no_content_text = "no content available";
             document.getElementById("content" + i).innerHTML = (no_content_text)
