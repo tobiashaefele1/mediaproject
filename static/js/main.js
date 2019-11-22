@@ -39,7 +39,7 @@ function updateContent() {
 
 
         } else {
-            var no_content_text = "no content available";
+            var no_content_text = "no content available - try searching for a different subject or time period";
             document.getElementById("content" + i).innerHTML = (no_content_text)
                document.getElementById("headline" + i).innerHTML = "";
             document.getElementById("photo" + i).style.visibility = "hidden";
