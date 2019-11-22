@@ -389,6 +389,9 @@
             initialIndex: 4
         });
         var today = new Date()
+        var n = today.getTimezoneOffset()
+        today.setHours(today.getHours() + (n/2))
+
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();

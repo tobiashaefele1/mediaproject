@@ -65,7 +65,7 @@ function updateContent() {
             // document.location.hash = '#' + scrollToAnchor;
              $('html, body').animate({
         scrollTop: $(`#${scrollToAnchor}`).offset().top
-            }, 2000);
+            }, 1500);
         }
 
 }
