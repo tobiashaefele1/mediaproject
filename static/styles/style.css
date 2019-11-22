@@ -150,3 +150,7 @@ i.gj-icon{
 }
 
 }
+
+row{
+     scroll-behavior: smooth;
+}
