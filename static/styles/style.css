@@ -105,6 +105,9 @@ i.gj-icon{
 }
 
 
+.row{
+     scroll-behavior: smooth;
+}
 
 
 
@@ -151,6 +154,3 @@ i.gj-icon{
 
 }
 
-row{
-     scroll-behavior: smooth;
-}
