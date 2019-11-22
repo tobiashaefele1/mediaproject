@@ -37,14 +37,12 @@ function updateContent() {
 
 
     if (scrollToAnchor != 0) {
-        document.addEventListener("DOMContentLoaded", function () {
+
             // document.location.hash = '#' + scrollToAnchor;
              $('html, body').animate({
         scrollTop: $("#{scrollToAnchor}").offset().top
-    }, 2000);
-
-        })
-    }
+            }, 2000);
+        }
 
 }
 
