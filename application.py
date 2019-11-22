@@ -17,10 +17,10 @@ d_today =d_today.strftime('%Y-%m-%d')
 # Init
 
 # key for development (Tobias_haefele@student...)
-# newsapi = NewsApiClient(api_key='ab38b7cbd99144fda017ca64ba98df3b')
+newsapi = NewsApiClient(api_key='ab38b7cbd99144fda017ca64ba98df3b')
 
 # key for heroku (tobiasahaefele@gmail.com)
-newsapi = NewsApiClient(api_key='6842a92db4434ca28611f793977b03fe')
+# newsapi = NewsApiClient(api_key='6842a92db4434ca28611f793977b03fe')
 
 
 query_input = "impeachment"
