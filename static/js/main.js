@@ -60,12 +60,12 @@ function updateContent() {
         // var button_text = document.createTextNode("load more")
         // node.appendChild(button_text);                              // Append the text to <li>
 
-        if($(`#show-more-button`+i).length == 0){
-        $("#list-group"+i).after(" <div class='show-more-button' id=`show-more-button${i}`> <button class='btn btn-primary'> show more... </button> </div>")
+        // if($(`#show-more-button`+i).length == 0){
+        // $("#list-group"+i).after(" <div class='show-more-button' id=`show-more-button${i}`> <button class='btn btn-primary'> show more... </button> </div>")
         // document.getElementById("list-group"+i).appendChild(node)
-    }
+    })
 
-        })
+        // })
     document.getElementById("date-today").innerHTML = date;
 
 

@@ -14,8 +14,8 @@ body {
 
 .carousel-cell{
 	/*height: 100%;*/
-    display: block;
-    overflow: auto;
+    /*display: block;*/
+    /*overflow: auto;*/
 	width: 20%;
 	padding-left: 15px;
 	padding-right: 15px;
