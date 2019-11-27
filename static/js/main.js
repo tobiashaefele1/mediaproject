@@ -182,6 +182,15 @@ $(document).ready(function() {
         "#fcae91",
         "#fb6a4a",
         "#cb181d"]
+
+
+    // jQuery
+    $('.main-carousel').on( 'change.flickity', function( event, index ) {
+            slider.value = index;
+            console.log("hello")
+        });
+
+
     slider.oninput = function() {
         var slider_value = this.value;
         slider.style.background = slider_color_range[slider_value]

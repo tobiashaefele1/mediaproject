@@ -416,9 +416,6 @@
 
 
 {#    #}
-{#    load my own javascript files#}
-	<script src="../static/js/main.js"></script>
-	<script src="../static/js/flickity.pkgd.min.js"></script>
 
 
     <script>
@@ -428,8 +425,9 @@
             adaptiveHeight: true,
             cellAlign: 'center',
             contain: true,
+            draggable: true,
             pageDots: true,
-            wrapAround: true,
+            {#wrapAround: true,#}
             initialIndex: 4
         });
         today = new Date()
@@ -469,6 +467,9 @@
 
 
               </script>
+{#    load my own javascript files#}
+	<script src="../static/js/main.js"></script>
+	<script src="../static/js/flickity.pkgd.min.js"></script>
 
 
 
