@@ -54,17 +54,18 @@ function updateContent() {
             document.getElementById("2_list" + i).style.visibility = "hidden";
             document.getElementById("3_list" + i).style.visibility = "hidden";
 
-
-
         }
         // var node = document.createElement("BUTTON")
         // node.innerHTML = "show more...";
         // var button_text = document.createTextNode("load more")
         // node.appendChild(button_text);                              // Append the text to <li>
 
-        $("#list-group"+i).after(" <div class='show-more-button'> <button class='btn btn-primary'> show more... </button> </div>")
+        if($(`#show-more-button`+i).length == 0){
+        $("#list-group"+i).after(" <div class='show-more-button' id=`show-more-button${i}`> <button class='btn btn-primary'> show more... </button> </div>")
         // document.getElementById("list-group"+i).appendChild(node)
-    })
+    }
+
+        })
     document.getElementById("date-today").innerHTML = date;
 
 
