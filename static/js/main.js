@@ -70,7 +70,6 @@ function updateContent() {
 
 
     if (scrollToAnchor != 0) {
-
             // document.location.hash = '#' + scrollToAnchor;
              $('html, body').animate({
         scrollTop: $(`#${scrollToAnchor}`).offset().top
@@ -81,8 +80,11 @@ function updateContent() {
 
 
 $(document).ready(function() {
+
+    // load page for first time
     updateContent()
 
+    // handle if user chooses a subject
     $('.subject-button').click(function(event){
         console.log(event.currentTarget.value)
 
@@ -105,7 +107,7 @@ $(document).ready(function() {
     })
 
 
-
+    // handle if user enters text (and/or date)
     $('#my-form').on('submit', function(event) {
             event.preventDefault();
         $.ajax({
@@ -126,6 +128,8 @@ $(document).ready(function() {
             })
     });
 
+    // handle show more button
+    // #todo: fix this behaviour
     $('.show-more-button').on("click", function() {
 
 
@@ -159,20 +163,66 @@ $(document).ready(function() {
 
 
 
-
-
         $('second-carousel').flickity('resize');
 
         flkty.reloadCells()
         var cellElements = flkty.getCellElements()
-        console.log(cellElements)
-
-
-
-
-
-
     })
+
+
+
+
+    // handle the range slider:
+    var slider = document.getElementById("myRange");
+    var slider_color_range = ["#2171b5",
+        "#6baed6",
+        "#bdd7e7",
+        "#eff3ff",
+        "#fee5d9",
+        "#fcae91",
+        "#fb6a4a",
+        "#cb181d"]
+    slider.oninput = function() {
+        var slider_value = this.value;
+        slider.style.background = slider_color_range[slider_value]
+         $('.main-carousel').flickity('select', slider_value)
+        // if (slider_value ==0){
+        //     slider.className = ""
+        // }
+        // else if(slider_value ==1){
+        //     slider.className = "slidercolor1"
+        // }
+        //         else if(slider_value ==2){
+        //     slider.className = "slidercolor2"
+        // }
+        //                 else if(slider_value ==3){
+        //     slider.className = "slidercolor3"
+        // }
+        //                         else if(slider_value ==4){
+        //     slider.className = "slidercolor4"
+        // }
+        //                                 else if(slider_value ==5){
+        //     slider.className = "slidercolor5"
+        // }
+        //                                         else if(slider_value ==6){
+        //     slider.className = "slidercolor6"
+        // }
+        // else{ slider.className = "slidercolor7"}
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 });
 
 
