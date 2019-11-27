@@ -13,7 +13,9 @@ body {
 
 
 .carousel-cell{
-	height: 700px;
+	/*height: 100%;*/
+    display: block;
+    overflow: auto;
 	width: 20%;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -91,8 +93,18 @@ i.gj-icon{
 	/*margin-left: 30px;*/
 }
 
+.subject-wrapper{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.subject-button{
+	margin-top: 5px;
+}
+
+
 #inlineforminput{
-	width: 100%;
+	width: 95%;
 	margin-bottom: 20px;
 	text-align: center;
 }
@@ -132,15 +144,33 @@ html{
     padding-bottom: 15px;
 }
 
+.show-more-button{
+    visibility: hidden;
+}
+
 
 ul{
     list-style-type:square;
 }
 
+#date-today-wrapper{
+    text-align: right;
+}
+
 @media(max-width: 900px){
 
+#date-today-wrapper{width: 95%}
+
+    .show-more-button{
+        text-align: center;
+        visibility: visible;
+    }
+
 .carousel-cell{
-	height: 700px;
+	/*height: 100%;*/
+        display: block;
+    overflow: auto;
+
 	width: 95%;
 	padding-left: 15px;
 	padding-right: 15px;

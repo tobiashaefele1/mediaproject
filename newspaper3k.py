@@ -11,18 +11,20 @@ article = Article(url)
 article.download()
 
 article.parse()
-
-print(article.authors)
-print(article.publish_date)
-print(article.text)
-print(article.top_image)
-print(article.summary)
 #
+# print(article.authors)
+# print(article.publish_date)
+# print(article.text)
+# print(article.top_image)
+# print(article.summary)
+# #
 # article.nlp()
 # print(article.keywords)
+#
+# welt_paper = newspaper.build('http://welt.de')
+welt_paper = newspaper.build('https://www.sueddeutsche.de/')
 
-welt_paper = newspaper.build('http://welt.de')
-
+#
 counter = 0
 for article in welt_paper.articles:
     counter += 1

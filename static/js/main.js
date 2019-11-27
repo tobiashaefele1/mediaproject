@@ -57,7 +57,15 @@ function updateContent() {
 
 
         }
+        // var node = document.createElement("BUTTON")
+        // node.innerHTML = "show more...";
+        // var button_text = document.createTextNode("load more")
+        // node.appendChild(button_text);                              // Append the text to <li>
+
+        $("#list-group"+i).after(" <div class='show-more-button'> <button class='btn btn-primary'> show more... </button> </div>")
+        // document.getElementById("list-group"+i).appendChild(node)
     })
+    document.getElementById("date-today").innerHTML = date;
 
 
     if (scrollToAnchor != 0) {
@@ -73,6 +81,29 @@ function updateContent() {
 
 $(document).ready(function() {
     updateContent()
+
+    $('.subject-button').click(function(event){
+        console.log(event.currentTarget.value)
+
+           $.ajax({
+            data: {
+                query: event.currentTarget.value,
+                date: $('#datepicker-large').val()
+            },
+            type: 'POST',
+            url: '/form_data'
+        })
+            .done(function(data){
+                console.log(data)
+                content = data.content
+                date = data.date
+                scrollToAnchor = data.scrollToAnchor
+                updateContent()
+
+            })
+    })
+
+
 
     $('#my-form').on('submit', function(event) {
             event.preventDefault();
@@ -93,6 +124,54 @@ $(document).ready(function() {
 
             })
     });
+
+    $('.show-more-button').on("click", function() {
+
+
+        var node = document.createElement("DIV")
+        node.id = "second-carousel"
+
+        $('#main-carousel-row').after(node)
+
+        var elem = document.querySelector('#second-carousel')
+
+        var cell = document.createElement("DIV")
+        cell.className = "carousel-cell"
+        var cell_content = document.createElement("P")
+        cell_content.innerHTML = "hello hello"
+        cell.appendChild(cell_content)
+
+             var cell2 = document.createElement("DIV")
+        cell2.className = "carousel-cell"
+        var cell_content2 = document.createElement("P")
+        cell_content2.innerHTML = "hello hello"
+        cell2.appendChild(cell_content2)
+
+        $('#second-carousel').append(cell)
+        $('#second-carousel').append(cell2)
+
+
+        var flkty = new Flickity( elem, {
+        cellAlign: 'left',
+        contain: true
+            });
+
+
+
+
+
+        $('second-carousel').flickity('resize');
+
+        flkty.reloadCells()
+        var cellElements = flkty.getCellElements()
+        console.log(cellElements)
+
+
+
+
+
+
+    })
 });
 
 
