@@ -170,7 +170,7 @@ def form_data():
     to_input = date_reformat
     query_input = form
     content = retrieve_everything(query_input, from_input, to_input)
-    scrollToAnchor = 'carousel'
+    scrollToAnchor = 'date-today-wrapper'
     return jsonify({'content': content, 'date': date, 'scrollToAnchor': scrollToAnchor})
 
 
