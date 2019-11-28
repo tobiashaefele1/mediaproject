@@ -68,6 +68,8 @@ function updateContent() {
         // })
     document.getElementById("date-today").innerHTML = date;
 
+    $('#loading-circle').hide()
+
 
     if (scrollToAnchor != 0) {
             // document.location.hash = '#' + scrollToAnchor;
@@ -76,7 +78,7 @@ function updateContent() {
             }, 1500);
         }
 
-    $('.main-carousel').flickity('resize');
+    // $('.main-carousel').flickity('resize');
 
 
 }
@@ -86,12 +88,14 @@ $(document).ready(function() {
 
     // load page for first time
      updateContent()
-      $('.main-carousel').flickity('resize');
+      // $('.main-carousel').flickity('resize');
 
 
     // handle if user chooses a subject
     $('.subject-button').click(function (event) {
         console.log(event.currentTarget.value)
+
+        $('#loading-circle').show()
 
         $.ajax({
             data: {
@@ -107,7 +111,6 @@ $(document).ready(function() {
                 date = data.date
                 scrollToAnchor = data.scrollToAnchor
                 updateContent()
-
             })
     })
 
@@ -115,6 +118,7 @@ $(document).ready(function() {
     // handle if user enters text (and/or date)
     $('#my-form').on('submit', function (event) {
         event.preventDefault();
+        $('#loading-circle').show()
         $.ajax({
             data: {
                 query: $('#inlineforminput').val(),
