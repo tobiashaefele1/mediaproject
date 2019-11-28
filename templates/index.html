@@ -421,58 +421,23 @@
         <script src="../static/js/main.js"></script>
         <script src="../static/js/flickity.pkgd.min.js"></script>
 
-
-
-    <script>
-    $(document).ready(function() {
-        $('.main-carousel').flickity({
-            // options
-            adaptiveHeight: true,
-            cellAlign: 'center',
-            contain: true,
-            draggable: true,
-            pageDots: true,
-            {#wrapAround: true,#}
-            initialIndex: 4
-        });
-        today = new Date()
-        var n = today.getTimezoneOffset()
-        today.setHours(today.getHours() + (n/2))
-
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = today.getFullYear();
-        today = mm + '/' + dd + '/' + yyyy;
-
-
-        today = mm + '/' + dd + '/' + yyyy;
-
-
-            $('#datepicker-large').datepicker({
-            uiLibrary: 'bootstrap4',
-                value: date,
-                size: "large",
-                        maxDate: today
-
-        });
-
-        {# $('.second-carousel').flickity({#}
-        {#    // options#}
-        {#    cellAlign: 'left',#}
-        {#    contain: true});#}
-
-    {#    $('.datepicker').datepicker({#}
-    {#format: 'mm/dd/yyyy',#}
-    {#startDate: '-3d'#}
-    {#        });#}
-
-
-    })
+        <script>
+                $('.main-carousel').flickity({
+        // options
+        adaptiveHeight: true,
+        imagesLoaded: true,
+        cellAlign: 'center',
+        contain: true,
+        draggable: true,
+        pageDots: true,
+        initialIndex: 4
+    });
 
 
 
 
-    </script>
+            </script>
+
 
 
 

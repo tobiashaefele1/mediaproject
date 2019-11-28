@@ -76,19 +76,24 @@ function updateContent() {
             }, 1500);
         }
 
+    $('.main-carousel').flickity('resize');
+
+
 }
 
 
 $(document).ready(function() {
 
     // load page for first time
-    updateContent()
+     updateContent()
+      $('.main-carousel').flickity('resize');
+
 
     // handle if user chooses a subject
-    $('.subject-button').click(function(event){
+    $('.subject-button').click(function (event) {
         console.log(event.currentTarget.value)
 
-           $.ajax({
+        $.ajax({
             data: {
                 query: event.currentTarget.value,
                 date: $('#datepicker-large').val()
@@ -96,7 +101,7 @@ $(document).ready(function() {
             type: 'POST',
             url: '/form_data'
         })
-            .done(function(data){
+            .done(function (data) {
                 console.log(data)
                 content = data.content
                 date = data.date
@@ -108,8 +113,8 @@ $(document).ready(function() {
 
 
     // handle if user enters text (and/or date)
-    $('#my-form').on('submit', function(event) {
-            event.preventDefault();
+    $('#my-form').on('submit', function (event) {
+        event.preventDefault();
         $.ajax({
             data: {
                 query: $('#inlineforminput').val(),
@@ -118,7 +123,7 @@ $(document).ready(function() {
             type: 'POST',
             url: '/form_data'
         })
-            .done(function(data){
+            .done(function (data) {
                 console.log(data)
                 content = data.content
                 date = data.date
@@ -128,9 +133,41 @@ $(document).ready(function() {
             })
     });
 
+    today = new Date()
+    var n = today.getTimezoneOffset()
+    today.setHours(today.getHours() + (n / 2))
+
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+
+
+    today = mm + '/' + dd + '/' + yyyy;
+
+
+    $('#datepicker-large').datepicker({
+        uiLibrary: 'bootstrap4',
+        value: date,
+        size: "large",
+        maxDate: today
+
+    });
+
+    //     {# $('.second-carousel').flickity({#}
+    //     {#    // options#}
+    //     {#    cellAlign: 'left',#}
+    //     {#    contain: true});#}
+    //
+    // {#    $('.datepicker').datepicker({#}
+    // {#format: 'mm/dd/yyyy',#}
+    // {#startDate: '-3d'#}
+    // {#        });#}
+
+
     // handle show more button
     // #todo: fix this behaviour
-    $('.show-more-button').on("click", function() {
+    $('.show-more-button').on("click", function () {
 
 
         var node = document.createElement("DIV")
@@ -146,7 +183,7 @@ $(document).ready(function() {
         cell_content.innerHTML = "hello hello"
         cell.appendChild(cell_content)
 
-             var cell2 = document.createElement("DIV")
+        var cell2 = document.createElement("DIV")
         cell2.className = "carousel-cell"
         var cell_content2 = document.createElement("P")
         cell_content2.innerHTML = "hello hello"
@@ -156,20 +193,16 @@ $(document).ready(function() {
         $('#second-carousel').append(cell2)
 
 
-        var flkty = new Flickity( elem, {
-        cellAlign: 'left',
-        contain: true
-            });
-
+        var flkty = new Flickity(elem, {
+            cellAlign: 'left',
+            contain: true
+        });
 
 
         $('second-carousel').flickity('resize');
-
         flkty.reloadCells()
         var cellElements = flkty.getCellElements()
     })
-
-
 
 
     // handle the range slider:
@@ -183,57 +216,26 @@ $(document).ready(function() {
         "#fb6a4a",
         "#cb181d"]
 
-
-    // jQuery
-    $('.main-carousel').on( 'change.flickity', function( event, index ) {
-            slider.value = index;
-            console.log("hello")
-        });
-
-
-    slider.oninput = function() {
+    slider.oninput = function () {
         var slider_value = this.value;
         slider.style.background = slider_color_range[slider_value]
-         $('.main-carousel').flickity('select', slider_value)
-        // if (slider_value ==0){
-        //     slider.className = ""
-        // }
-        // else if(slider_value ==1){
-        //     slider.className = "slidercolor1"
-        // }
-        //         else if(slider_value ==2){
-        //     slider.className = "slidercolor2"
-        // }
-        //                 else if(slider_value ==3){
-        //     slider.className = "slidercolor3"
-        // }
-        //                         else if(slider_value ==4){
-        //     slider.className = "slidercolor4"
-        // }
-        //                                 else if(slider_value ==5){
-        //     slider.className = "slidercolor5"
-        // }
-        //                                         else if(slider_value ==6){
-        //     slider.className = "slidercolor6"
-        // }
-        // else{ slider.className = "slidercolor7"}
-
-
+        $('.main-carousel').flickity('select', slider_value)
 
     }
+        // jQuery
+    $('.main-carousel').on('change.flickity', function (event, index) {
+        slider.value = index;
+        slider.style.background = slider_color_range[index];
+
+        console.log("hello")
+    });
 
 
 
 
 
 
-
-
-
-
-
-});
-
+})
 
 
  //
@@ -259,6 +261,29 @@ $(document).ready(function() {
     //
     //     headline.append(headline_text)
     //     content.append(content_text)
+
+       // if (slider_value ==0){
+        //     slider.className = ""
+        // }
+        // else if(slider_value ==1){
+        //     slider.className = "slidercolor1"
+        // }
+        //         else if(slider_value ==2){
+        //     slider.className = "slidercolor2"
+        // }
+        //                 else if(slider_value ==3){
+        //     slider.className = "slidercolor3"
+        // }
+        //                         else if(slider_value ==4){
+        //     slider.className = "slidercolor4"
+        // }
+        //                                 else if(slider_value ==5){
+        //     slider.className = "slidercolor5"
+        // }
+        //                                         else if(slider_value ==6){
+        //     slider.className = "slidercolor6"
+        // }
+        // else{ slider.className = "slidercolor7"}
 
 
 
