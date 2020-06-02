@@ -29,18 +29,22 @@ to_input = d_today
 page_size_input = 100
 page_input = 1
 date = to_input[5:7] + "/" + to_input[8:10] + "/" + to_input[0:4]
-print(date)
+# print(date)
+
+# print(newsapi.get_sources(
+#     country="us"
+# ))
 
 # download all articles from past 3 days from NYT, Fox News and MSNBC
 
 # /v2/everything
 def retrieve_everything(query_input,from_input, to_input):
 
-    NYT = newsapi.get_everything(
+    NBC = newsapi.get_everything(
         q=query_input,
         # qintitle='impeach',
-        sources='the-new-york-times',
-        domains='nytimes.com',
+        sources='nbc-news',
+        domains='nbcnews.com',
         from_param=from_input,
         to=to_input,
         language='en',
@@ -133,7 +137,8 @@ def retrieve_everything(query_input,from_input, to_input):
                                               page_size= page_size_input,
                                               page=page_input)
 
-    content = [Msnbc, Huffington_Post, CNN, Politico, NYT, Reuters, USA_today, FOX]
+    content = [Msnbc, Huffington_Post, CNN, Politico, NBC, Reuters, USA_today, FOX]
+    # print(content)
     return content
 
 @app.route('/')
@@ -183,6 +188,14 @@ def germany():
 @app.route('/UK')
 def UK():
     return flask.render_template('UK.html')
+
+
+@app.route('/own_article')
+def own_article():
+    return flask.render_template('own_article.html')
+
+
+
 
 
 

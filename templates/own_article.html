@@ -32,17 +32,6 @@
     <link rel="shortcut icon" href="../static/favicon.ico">
 
 
-{#    the "slick" slider#}
-{#      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">#}
-{#        <!-- Add the slick-theme.css if you want default styling -->#}
-{#        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">#}
-{#    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>#}
-{#      <link rel="stylesheet" type="text/css" href="../static/slick/slick.min.css">#}
-{#  <link rel="stylesheet" type="text/css" href="../static/slick/slick.css">#}
-
-{#  <link rel="stylesheet" type="text/css" href="../static/slick/slick-theme.css">#}
-{#    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>#}
-
      <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
 
 
@@ -63,48 +52,14 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div  class="col-md-2"></div>
-                <div  class="col-md-6">
-
-                </div>
-            <div  class="col-md-2" id="language-selector">
-                <a id="link_to_US" href="/">   USA  </a> I
-                <a id="link_to_UK" href="/UK">     UK    </a> I
-                 <a id="link_to_germany" href="/germany"> Germany   </a>
-                 <a id="link_to_own_article" href="/own_article"> Drop your own article   </a>
-
-
-
-
-
-                </div>
-            <div  class="col-md-2"></div>
-
-        </div>
+         </div>
 
         <div class="row">
             <div  class="col-md-2"></div>
             <div class="col-md-8">
-            <h1 id="website-title">Compare media coverage? Pick a subject! </h1>
+            <h1 id="website-title">Compare media coverage? Drop your own article! </h1>
                 </div>
             <div  class="col-md-2"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 justify-content-center subject-wrapper">
-                <button class="btn btn-primary justify-content-center subject-button" value="sports" id="subject-button"> Sports </button>
-                <button class="btn btn-primary justify-content-center subject-button" value="impeachment"> Impeachment </button>
-                <button class="btn btn-primary justify-content-center subject-button" value="politics"> Politics </button>
-                <button class="btn btn-primary justify-content-center subject-button" value="travel"> Travel </button>
-                <button class="btn btn-primary justify-content-center subject-button" value="business"> Business </button>
-                <button class="btn btn-primary justify-content-center subject-button" value="weather"> Weather </button>
-                <button class="btn btn-primary justify-content-center subject-button" value="international"> International </button>
-
-
-            </div>
-            <div class="col-md-2"></div>
-
         </div>
 
              <div class="row" id="selectors">
@@ -112,16 +67,16 @@
                  <div class="col-md-8">
                  <form class="form-inline justify-content-center" method="post" id="my-form">
                        <label class="sr-only" for="inlineforminput">Name</label>
-                      <input type="text" name="query" class="form-control-lg" id="inlineforminput" placeholder="e.g. impeachment, sport, crime...">
-                   <input id="datepicker-large" name="date" width="276" />
+                      <input type="text" name="query" class="form-control-lg" id="inlineforminput" placeholder="e.g. www.nyt.com/...">
                      <div id="form-placeholder" class="col-md-1"></div>
-                                            <button id="submit-button" type="submit" class="btn btn-primary btn-lg col-lg-2 col-md-3 col-sm-3 justify-content-center">Find News!</button>
+                                            <button id="submit-button" type="submit" class="btn btn-primary btn-lg col-lg-2 col-md-3 col-sm-3 justify-content-center">Find similar!</button>
                                       </form>
 
                                           <div id="loading-circle" class="spin"></div>
                      </div>
 
                 </div>
+
             <div  class="col-md-2"></div>
 
         </div>
@@ -153,6 +108,8 @@
 {##}
 {#        </div>#}
 
+
+{#    // today's date#}
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" id="date-today-wrapper">

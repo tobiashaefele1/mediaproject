@@ -10,7 +10,7 @@
 console.log(content);
 
 function updateContent() {
-    var outlets = ["MSNBC", "Huffington Post", "CNN", "Politico", "NYT", "Reuters", "USA Today", "FOX"];
+    var outlets = ["MSNBC", "Huffington Post", "CNN", "Politico", "NBC", "Reuters", "USA Today", "FOX"];
 
     content.forEach(function (d, i) {
 
