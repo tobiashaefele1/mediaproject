@@ -4,6 +4,9 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+#photo0, #photo1, #photo2, #photo3, #photo4, #photo5, #photo6, #photo7{
+    visibility: visible; !important;
+}
 
 
 .row-names{
