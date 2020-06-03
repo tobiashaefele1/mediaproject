@@ -1,5 +1,5 @@
 import flask
-from flask import Flask, jsonify
+from flask import Flask, jsonify, make_response
 from newsapi import NewsApiClient
 from flask import request, redirect
 import datetime
@@ -17,10 +17,10 @@ d_today =d_today.strftime('%Y-%m-%d')
 # Init
 
 # key for development (Tobias_haefele@student...)
-# newsapi = NewsApiClient(api_key='ab38b7cbd99144fda017ca64ba98df3b')
+newsapi = NewsApiClient(api_key='ab38b7cbd99144fda017ca64ba98df3b')
 
 # key for heroku (tobiasahaefele@gmail.com)
-newsapi = NewsApiClient(api_key='6842a92db4434ca28611f793977b03fe')
+# newsapi = NewsApiClient(api_key='6842a92db4434ca28611f793977b03fe')
 
 
 query_input = "impeachment"
@@ -144,7 +144,17 @@ def retrieve_everything(query_input,from_input, to_input):
 @app.route('/')
 def index():
     # print(content)
-    return flask.render_template('index.html', content=retrieve_everything(query_input, from_input, to_input), date = date, scrollToAnchor=0)
+
+    ## added content, take out if it doesnt work
+    # resp = retrieve_everything(query_input, from_input, to_input)
+    # resp.set_cookie('same-site-cookie', 'foo', samesite='Lax');
+    # resp.set_cookie('cross-site-cookie', 'bar', samesite='None', secure=True);
+
+    # old
+    return flask.render_template('index.html',content=retrieve_everything(query_input, from_input, to_input), date = date, scrollToAnchor=0)
+    # return flask.render_template('index.html',content=resp, date = date, scrollToAnchor=0)
+
+
 # NYT=NYT, Huffington_Post=Huffington_Post, Politico=Politico, Reuters=Reuters, USA_today=USA_today,CNN=CNN,FOX=FOX)
 
 
