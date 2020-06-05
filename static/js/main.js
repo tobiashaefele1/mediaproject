@@ -18,22 +18,35 @@ function updateContent() {
         document.getElementById("outlet" + i).className = "outlet"
 
         if (content[i].totalResults != 0) {
-
+            console.log("total results not equal zero inside loop")
             document.getElementById("headline" + i).innerHTML = (content[i].articles[0].title)
             document.getElementById("photo" + i).src = (content[i].articles[0].urlToImage)
             document.getElementById("content" + i).innerHTML = (content[i].articles[0].description)
             document.getElementById("photo-link" + i).href = (content[i].articles[0].url)
+            document.getElementById("photo" + i).style.visibility = "visible";
+
+            document.getElementById("content" + i).style.borderBottom = "0.5px solid grey";
+
+
             if(content[i].totalResults > 1) {
-                document.getElementById("1_list" + i).innerHTML = (content[i].articles[1].title).link(content[i].articles[1].url)}
+                document.getElementById("1_list" + i).innerHTML = (content[i].articles[1].title).link(content[i].articles[1].url)
+                document.getElementById("1_list" + i).style.visibility = "visible"
+            }
                 else{document.getElementById("1_list" + i).style.visibility = "hidden";}
 
             if(content[i].totalResults >2){
-                 document.getElementById("2_list" + i).innerHTML = (content[i].articles[2].title).link(content[i].articles[2].url)}
+                 document.getElementById("2_list" + i).innerHTML = (content[i].articles[2].title).link(content[i].articles[2].url)
+                            document.getElementById("2_list" + i).style.visibility = "visible"
+
+            }
                             else{document.getElementById("2_list" + i).style.visibility = "hidden";}
 
 
             if(content[i].totalResults >3) {
-                 document.getElementById("3_list" + i).innerHTML = (content[i].articles[3].title).link(content[i].articles[3].url)}
+                 document.getElementById("3_list" + i).innerHTML = (content[i].articles[3].title).link(content[i].articles[3].url)
+                            document.getElementById("3_list" + i).style.visibility = "visible"
+
+            }
                             else{document.getElementById("3_list" + i).style.visibility = "hidden";}
 
 
@@ -43,6 +56,7 @@ function updateContent() {
             document.getElementById("content" + i).innerHTML = (no_content_text)
                document.getElementById("headline" + i).innerHTML = "";
             document.getElementById("photo" + i).style.visibility = "hidden";
+            console.log("hidden image")
 
             document.getElementById("content" + i).style.textAlign = "center"
             document.getElementById("content" + i).style.color = "grey";
