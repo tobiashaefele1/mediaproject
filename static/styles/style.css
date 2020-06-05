@@ -4,7 +4,34 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-#photo0, #photo1, #photo2, #photo3, #photo4, #photo5, #photo6, #photo7{
+#photo7{
+    visibility: visible; !important;
+}
+#photo0{
+    visibility: visible; !important;
+}
+
+#photo1{
+    visibility: visible; !important;
+}
+
+#photo2{
+    visibility: visible; !important;
+}
+
+#photo3{
+    visibility: visible; !important;
+}
+
+#photo4{
+    visibility: visible; !important;
+}
+
+#photo5{
+    visibility: visible; !important;
+}
+
+#photo6 {
     visibility: visible; !important;
 }
 
